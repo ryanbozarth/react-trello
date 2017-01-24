@@ -5,19 +5,21 @@ export default class CardList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title
+      title: "List Title",
+      list: ["List One", "List Two", "List Three"]
     }
   }
+  renderCardList() {
+    return this.state.list.map(function(title, i){
+      return <CardList key={i} title={title} />
+    })
+  }
   render() {
-    const card = [];
-      for (let i=0; i<3; i++) {
-          card.push(<Card key={i} />);
-      }
-      return (
-          <div className="card-list">
-            <span>{this.state.title}</span>
-            {card}
-          </div>
-      );
+    return (
+        <div className="card-list">
+          <h1>{this.state.title}</h1>
+          {this.renderCardList()}
+        </div>
+    );
   }
 }

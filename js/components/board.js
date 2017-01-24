@@ -5,20 +5,20 @@ export default class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Board One",
+      title: "The Board",
       list: ["List One", "List Two", "List Three"]
     }
   }
-  renderCardList() {
+  renderBoard() {
     return this.state.list.map(function(title, i){
-      return <CardList key={i} title={title} />
+      return <Board key={i} title={title} />
     })
   }
   render() {
     return (
-        <div className="board-list">
+        <div className="board">
           <h1>{this.state.title}</h1>
-          {this.renderCardList()}
+          {this.renderBoard()}
         </div>
     );
   }
