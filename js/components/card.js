@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Card extends React.Component  {
+export default class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,15 +9,16 @@ export default class Card extends React.Component  {
     }
   }
   renderCard() {
-    return this.state.content.map(function(content, i){
-      return <Card key={i} content={content} />
-    })
+    return this.state.content
+    // .map(function(content, i){
+    //   return <Card key={i} content={content} />
+    // })
   }
   render() {
     return (
       <div>
       <p>{this.renderCard()}</p>
       </div>
-    );
+    )
   }
 }

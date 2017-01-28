@@ -11,7 +11,7 @@ export default class Board extends React.Component {
   }
   renderBoard() {
     return this.state.list.map(function(title, i){
-      return <Board key={i} title={title} />
+      return <CardList key={i} title={title} />
     })
   }
   render() {
@@ -20,6 +20,6 @@ export default class Board extends React.Component {
           <h1>{this.state.title}</h1>
           {this.renderBoard()}
         </div>
-    );
+    )
   }
 }

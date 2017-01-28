@@ -11,7 +11,7 @@ export default class CardList extends React.Component {
   }
   renderCardList() {
     return this.state.list.map(function(title, i){
-      return <CardList key={i} title={title} />
+      return <Card key={i} title={title} />
     })
   }
   render() {
@@ -20,6 +20,6 @@ export default class CardList extends React.Component {
           <h1>{this.state.title}</h1>
           {this.renderCardList()}
         </div>
-    );
+    )
   }
 }
