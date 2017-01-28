@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {Component} from 'react';
 import CardList from './list';
 
-export default class Board extends React.Component {
+export default class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "The Board",
-      list: ["List One", "List Two", "List Three"]
+      title: props.title,
+      list: {
+        animals: ["bears", "tigers", "lions"],
+        fruits: ["apple", "banana", "pears"],
+        veggies: ["carrot", "lettuce", "kale"]
+      }
     }
   }
   renderBoard() {
-    return this.state.list.map(function(title, i){
-      return <CardList key={i} title={title} />
-    })
+    let lists = []
+    for (var key in this.state.list) {
+      lists.push(<CardList key={key} title={key} list={this.state.list[key]} />)
+    }
+    return lists
   }
   render() {
     return (
