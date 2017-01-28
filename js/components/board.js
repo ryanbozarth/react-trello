@@ -12,11 +12,18 @@ export default class Board extends Component {
         veggies: ["carrot", "lettuce", "kale"]
       }
     }
+    this.addCardToList = this.addCardToList.bind(this)
+  }
+  addCardToList(text, list) {
+    console.log({text, list})
+    this.setState(state => {
+      return state.list[list].push(text)
+    })
   }
   renderBoard() {
     let lists = []
     for (var key in this.state.list) {
-      lists.push(<CardList key={key} title={key} list={this.state.list[key]} />)
+      lists.push(<CardList key={key} addCard={this.addCardToList} title={key} list={this.state.list[key]} />)
     }
     return lists
   }
