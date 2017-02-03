@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import CardList from './list';
+import CardList from './card-list';
+import ListContainer from './list-container'
 
 export default class Board extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class Board extends Component {
   renderBoard() {
     let lists = []
     for (var key in this.state.list) {
-      lists.push(<CardList key={key} addCard={this.addCardToList} title={key} list={this.state.list[key]} />)
+      lists.push(<ListContainer key={key} addCard={this.addCardToList} title={key} list={this.state.list[key]} />)
     }
     return lists
   }
@@ -31,7 +32,7 @@ export default class Board extends Component {
     return (
         <div className="board">
           <h1>{this.state.title}</h1>
-          {this.renderBoard()}
+         {this.renderBoard()}
         </div>
     )
   }

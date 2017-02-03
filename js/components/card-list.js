@@ -4,7 +4,7 @@ import Card from './card';
 export default function CardList(props) {
   let state = {
     text: '',
-    el: null //
+    el: null
   }
 
   function renderCardList() {
@@ -12,26 +12,15 @@ export default function CardList(props) {
       return <Card key={i} text={text} />
     })
   }
-  function onAddSubmit(event){
-    event.preventDefault()
-    props.addCard(state.text, props.title)
-    state.el.value = null //
-  }
-  function onAddInputChanged(event){
-    state.text = event.target.value
-    if (!state.el) { //
-      state.el = event.target
-    }
-  }
 
   return (
     <div className="card-list">
       <h1>{props.title}</h1>
       {renderCardList()}
-      <form>
+      {/* <form>
         <input type="text" onChange={onAddInputChanged}></input>
         <button type="submit" onClick={onAddSubmit}>Add</button>
-      </form>
+      </form> */}
     </div>
   )
 }
