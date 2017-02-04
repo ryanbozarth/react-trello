@@ -1,38 +1,43 @@
 import React, {Component} from 'react';
-import CardList from './card-list';
 import ListContainer from './list-container'
 
 export default class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: props.title,
-      list: {
-        animals: ["bears", "tigers", "lions"],
-        fruits: ["apple", "banana", "pears"],
-        veggies: ["carrot", "lettuce", "kale"]
-      }
+      boardTitle: props.title,
+      lists: [
+        {
+          title: 'List One',
+          cards: ['Card One', 'Card Two', 'Card Three']
+        },
+        {
+          title: 'List Two',
+          cards: ['Card One', 'Card Two', 'Card Three']
+        },
+        {
+          title: 'List Three',
+          cards: ['Card One', 'Card Two', 'Card Three']
+        },
+        {
+          title: 'List Four',
+          cards: ['Card One', 'Card Two', 'Card Three']
+        }
+      ]
     }
-    this.addCardToList = this.addCardToList.bind(this)
   }
-  addCardToList(text, list) {
-    console.log({text, list})
-    this.setState(state => {
-      return state.list[list].push(text)
+
+  renderListContainers() {
+    return this.state.lists.map((list, index) => {
+      return <ListContainer key={index} title={list.title} cards={list.cards} />
     })
   }
-  renderBoard() {
-    let lists = []
-    for (var key in this.state.list) {
-      lists.push(<ListContainer key={key} addCard={this.addCardToList} title={key} list={this.state.list[key]} />)
-    }
-    return lists
-  }
+
   render() {
     return (
         <div className="board">
-          <h1>{this.state.title}</h1>
-         {this.renderBoard()}
+          <h1>{this.state.boardTitle}</h1>
+         {this.renderListContainers()}
         </div>
     )
   }

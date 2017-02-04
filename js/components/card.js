@@ -4,7 +4,7 @@ export default function Card(props) {
 
  return (
     <div>
-      <p>{props.text}</p>
+      <p>{props.title}</p>
     </div>
   )
 }
