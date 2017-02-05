@@ -1,21 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import CardList from './card-list'
 
-export default class ListContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: props.title,
-      cards: props.cards
-    }
-  }
+export default function ListContainer(props) {
 
-  render() {
-    return (
-      <div>
-        <h3>{this.state.title}</h3>
-        <CardList cards={this.state.cards}/>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h3>{props.title}</h3>
+      <CardList cards={props.cards}/>
+    </div>
+  )
 }
