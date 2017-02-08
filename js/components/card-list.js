@@ -1,29 +1,22 @@
 import React, {Component} from 'react';
 import Card from './card';
 
-export default class CardList extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      cards: props.cards
-    }
-  }
-  renderCards() {
-    return this.state.cards.map(function(title, index) {
-      return <Card key={index} title={title}/>
-    })
+export default function CardList(props) {
+
+  function renderCardList() {
+    return props.cards.map((title, index) => (
+       <Card key={index} title={title}/>
+      )
+    )
   }
 
-
-  render() {
     return (
       <div className="card-list">
-        {this.renderCards()}
-        <form>
-          <input type="text"/>
+        {renderCardList()}
+        <form onSubmit={props.onSubmit}>
+          <input type="text" onChange={props.onChange} />
           <button type="submit">Add</button>
         </form>
       </div>
     )
   }
-}
