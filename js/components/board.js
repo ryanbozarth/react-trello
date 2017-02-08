@@ -25,12 +25,24 @@ export default class Board extends Component {
         }
       ]
     }
+    this.onAddInputChanged = this.onAddInputChanged.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   renderListContainers() {
     return this.state.lists.map((list, index) => {
-      return <ListContainer key={index} title={list.title} cards={list.cards} />
+      return <ListContainer key={index} title={list.title} cards={list.cards} onChange={onAddInputChanged} onSubmit={onSubmit} />
     })
+  }
+
+  onAddInputChanged() {
+    // updates state
+  // then call parent's callback fn prop
+  }
+
+  onSubmit() {
+    // updates state
+  // then call parent's callback fn prop
   }
 
   render() {

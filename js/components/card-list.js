@@ -14,15 +14,6 @@ export default class CardList extends Component {
     })
   }
 
-  onAddInputChanged() {
-    // updates state
-  // then call parent's callback fn prop
-  }
-
-  onSubmit() {
-    // updates state
-  // then call parent's callback fn prop
-  }
 
   render() {
     return (

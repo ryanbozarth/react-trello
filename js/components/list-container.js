@@ -6,7 +6,7 @@ export default function ListContainer(props) {
   return (
     <div>
       <h3>{props.title}</h3>
-      <CardList cards={props.cards}/>
+      <CardList cards={props.cards} onChange={onAddInputChanged} onSubmit={onSubmit} />
     </div>
   )
 }
