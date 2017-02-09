@@ -8,53 +8,28 @@ export default class Board extends Component {
       boardTitle: props.title,
       lists: [
         {
-          title: 'List One',
-          cards: ['Card One', 'Card Two', 'Card Three']
+          title: 'List One'
         },
         {
-          title: 'List Two',
-          cards: ['Card One', 'Card Two', 'Card Three']
+          title: 'List Two'
         },
         {
-          title: 'List Three',
-          cards: ['Card One', 'Card Two', 'Card Three']
+          title: 'List Three'
         },
         {
-          title: 'List Four',
-          cards: ['Card One', 'Card Two', 'Card Three']
+          title: 'List Four'
         }
       ]
     }
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onAddInputChanged = this.onAddInputChanged.bind(this);
   }
 
-  onAddInputChanged(event) {
-    let text = event.target.value;
-    console.log(text);
-    this.setState({
-      text: text
-    })
-  }
-
-  onSubmit(event) {
-    event.preventDefault();
-    const update = this.state.cards.slice()
-      update.push(this.state.text)
-      this.setState({ update: update })
-    // this.setState ({
-    //   cards: this.state.cards.concat(this.state.text)
-    // })
-  }
 
 
   renderListContainers() {
     return this.state.lists.map((list, index) => {
       return <ListContainer key={index}
-              title={list.title} cards={list.cards}
-              onChange={this.onAddInputChanged}
-
-              onSubmit={this.onSubmit} />
+              title={list.title}
+             />
     })
   }
 

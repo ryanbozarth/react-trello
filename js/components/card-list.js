@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Card from './card';
 
 export default function CardList(props) {
@@ -14,7 +14,7 @@ export default function CardList(props) {
       <div className="card-list">
         {renderCardList()}
         <form onSubmit={props.onSubmit}>
-          <input type="text" onChange={props.onChange} />
+          <input type="text" value={props.text} onChange={props.onChange} />
           <button type="submit">Add</button>
         </form>
       </div>
