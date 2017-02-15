@@ -17,9 +17,10 @@ describe('List component', function() {
     renderer.render(<CardList title={title} cards={cards} />);
     const result = renderer.getRenderOutput();
 
-    // const children = result.props.children;
+    const children = result.props.children;
+    children[1].type.should.equal('form');
     // children[1][0].props.text.should.equal(cards[0]);
     // children[1][1].props.text.should.equal(cards[1]);
-    // children[2].type.should.equal('form');
+
   });
 });
