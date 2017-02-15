@@ -8,16 +8,16 @@ export default class Board extends Component {
       boardTitle: props.title,
       lists: [
         {
-          title: 'List One'
+          title: 'list title 1'
         },
         {
-          title: 'List Two'
+          title: 'list title 2'
         },
         {
-          title: 'List Three'
+          title: 'list title 3'
         },
         {
-          title: 'List Four'
+          title: 'list title 4'
         }
       ]
     }

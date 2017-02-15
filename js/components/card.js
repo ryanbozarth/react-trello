@@ -3,7 +3,7 @@ import React from 'react';
 export default function Card(props) {
 
  return (
-    <div>
+    <div className="card">
       <p>{props.title}</p>
     </div>
   )
