@@ -19,8 +19,10 @@ describe('List component', function() {
 
     const children = result.props.children;
     children[1].type.should.equal('form');
-    // children[1][0].props.text.should.equal(cards[0]);
-    // children[1][1].props.text.should.equal(cards[1]);
+    children[0][0].props.title.should.equal(cards[0])
+    children[0][1].props.title.should.equal(cards[1])
+    children[1].props.children[0].type.should.equal('input');
+    children[1].props.children[1].type.should.equal('button');
 
   });
 });

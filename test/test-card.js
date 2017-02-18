@@ -15,8 +15,7 @@ describe('Card component', function() {
     const result = renderer.getRenderOutput();
     result.props.className.should.equal('card');
     result.type.should.equal('div');
-
-    // const children = result.props.children;
-    // result.props.should.equal('title');
+    const p = result.props.children;
+    p.props.children.should.equal(title);
   });
 });
